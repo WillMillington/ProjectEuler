@@ -49,10 +49,27 @@ namespace ProjectEulerTests
         //{
         //    Assert.That(Program.Fibonacci(8).Count, Is.EqualTo(2));
         //}
-        [Test]
-        public void Sum_max8_is_10()
+        //[Test]
+        //public void Sum_max8_is_10()
+        //{
+        //    Assert.That(Program.Fibonacci(8), Is.EqualTo(10));
+        //}
+        //[Test]
+        //public void Last_under_4mil()
+        //{
+        //    Assert.That(Program.Fibonacci(58).Last(), Is.EqualTo(3524578));
+        //}
+        [TestCase(8, 10)]
+        [TestCase(9, 44)]
+        [TestCase(10, 44)]
+        [TestCase(11, 44)]
+        [TestCase(12, 188)]
+        [TestCase(13, 188)]
+        [TestCase(14, 188)]
+        [TestCase(15, 798)]
+        public void EvenSumWorks(int max, int expected)
         {
-            Assert.That(Program.Fibonacci(8), Is.EqualTo(10));
+            Assert.That(Program.Fibonacci(max), Is.EqualTo(expected));
         }
     }
 }

@@ -23,21 +23,24 @@ namespace ProjectEuler
             //if (max == 2) return sequence;
 
             var evenSequence = new List<int>();
-
-            for (int i = 2; i < max; i++)
-            {                    
-                num3 = num1 + num2;
-                sequence.Add(num3);
-                if (num3 % 2 == 0) evenSequence.Add(num3);
-                num1 = num2;
-                num2 = num3;
-            }
             int evenSequenceSum = 0;
-            foreach(int i in evenSequence)
+            for (int i = 2; i < max; i++)
+            {
+                num3 = num1 + num2;
+                if (num3 < 4000000)
+                {
+                    sequence.Add(num3);
+                    if (num3 % 2 == 0) evenSequence.Add(num3);
+                    num1 = num2;
+                    num2 = num3;
+                }
+            }    
+            foreach (int i in evenSequence)
             {
                 evenSequenceSum += i;
             }
             return evenSequenceSum;
+            //return sequence;
             
         }
     }
