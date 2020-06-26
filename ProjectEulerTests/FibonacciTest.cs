@@ -69,7 +69,7 @@ namespace ProjectEulerTests
         [TestCase(15, 798)]
         public void EvenSumWorks(int max, int expected)
         {
-            Assert.That(Program.Fibonacci(max), Is.EqualTo(expected));
+            Assert.That(FibonacciTask.Fibonacci(max), Is.EqualTo(expected));
         }
     }
 }
